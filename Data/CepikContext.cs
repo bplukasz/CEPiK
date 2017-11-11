@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CEPiK.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,12 @@ namespace CEPiK.Data
         public CepikContext(DbContextOptions<CepikContext> options) : base(options)
         {
         }
+
+
+        public DbSet<Entrepreneur> Entrepreneurs { get; set; }
+        public DbSet<VehicleControlStation> VehicleControlStations { get; set; }
+        public DbSet<Diagnostician> Diagnosticians { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Service> Services { get; set; }
     }
 }

@@ -11,5 +11,8 @@ namespace CEPiK.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public int NumberOfPremissions { get; set; }
+        public int VehicleControlStationID { get; set; }
+
+        public VehicleControlStation VehicleControlStation { get; set; }
     }
 }

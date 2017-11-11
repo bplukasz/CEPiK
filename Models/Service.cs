@@ -7,5 +7,7 @@ namespace CEPiK.Models
 {
     public class Service
     {
+        public int ServiceID { get; set; }
+        public String Name { get; set; }
     }
 }
