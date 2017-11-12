@@ -9,3 +9,9 @@ C:\Users\Acer\Source\Repos\CEPiK\CEPiK\obj\Debug\netcoreapp2.0\CEPiK.AssemblyInf
 C:\Users\Acer\Source\Repos\CEPiK\CEPiK\obj\Debug\netcoreapp2.0\CEPiK.AssemblyInfo.cs
 C:\Users\Acer\Source\Repos\CEPiK\CEPiK\obj\Debug\netcoreapp2.0\CEPiK.dll
 C:\Users\Acer\Source\Repos\CEPiK\CEPiK\obj\Debug\netcoreapp2.0\CEPiK.pdb
+C:\Users\Grzesiek\Documents\Visual Studio 2017\cepik\obj\Debug\netcoreapp2.0\CEPiK.csprojResolveAssemblyReference.cache
+C:\Users\Grzesiek\Documents\Visual Studio 2017\cepik\obj\Debug\netcoreapp2.0\CEPiK.csproj.CoreCompileInputs.cache
+C:\Users\Grzesiek\Documents\Visual Studio 2017\cepik\obj\Debug\netcoreapp2.0\CEPiK.AssemblyInfoInputs.cache
+C:\Users\Grzesiek\Documents\Visual Studio 2017\cepik\obj\Debug\netcoreapp2.0\CEPiK.AssemblyInfo.cs
+C:\Users\Grzesiek\Documents\Visual Studio 2017\cepik\obj\Debug\netcoreapp2.0\CEPiK.dll
+C:\Users\Grzesiek\Documents\Visual Studio 2017\cepik\obj\Debug\netcoreapp2.0\CEPiK.pdb
