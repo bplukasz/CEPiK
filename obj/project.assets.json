@@ -12533,7 +12533,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Acer\\.nuget\\packages\\": {},
+    "C:\\Users\\Patrycja\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12542,17 +12542,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Source\\Repos\\CEPiK\\CEPiK\\CEPiK.csproj",
+      "projectUniqueName": "D:\\B spy\\!materiały na studia\\V sem\\Mw\\projekt\\Stacja kontoli pojazdów\\CEPiK\\CEPiK.csproj",
       "projectName": "CEPiK",
-      "projectPath": "C:\\Users\\Acer\\Source\\Repos\\CEPiK\\CEPiK\\CEPiK.csproj",
-      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Source\\Repos\\CEPiK\\CEPiK\\obj\\",
+      "projectPath": "D:\\B spy\\!materiały na studia\\V sem\\Mw\\projekt\\Stacja kontoli pojazdów\\CEPiK\\CEPiK.csproj",
+      "packagesPath": "C:\\Users\\Patrycja\\.nuget\\packages\\",
+      "outputPath": "D:\\B spy\\!materiały na studia\\V sem\\Mw\\projekt\\Stacja kontoli pojazdów\\CEPiK\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Patrycja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
