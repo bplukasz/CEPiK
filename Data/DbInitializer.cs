@@ -78,6 +78,7 @@ namespace CEPiK.Data
             {
                 context.Services.Add(service);
                 context.SaveChanges();
+            }
 
                 var vehicleControlStations = new VehicleControlStation[]
                 {
@@ -96,4 +97,3 @@ namespace CEPiK.Data
             }
         }
     }
-}
