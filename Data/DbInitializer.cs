@@ -30,7 +30,7 @@ namespace CEPiK.Data
 
             var entrepreneurs = new Entrepreneur[]
             {
-                new Entrepreneur {NIP=5423642344, Name="Jan", Surname="Kowalski", AddressID=1, NumberInEnterpreneurRegister=2332 },
+                new Entrepreneur {NIP=5423642344, Name="Jan", Surname="Kowalski", Address=addresses[0], NumberInEnterpreneurRegister=2332 },
             };
             
             foreach(Entrepreneur entrepreneur in entrepreneurs)

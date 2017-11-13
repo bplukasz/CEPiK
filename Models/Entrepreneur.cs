@@ -12,7 +12,9 @@ namespace CEPiK.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long NIP { get; set; }
+        [Display(Name = "Imie przedsiębiorcy")]
         public string Name { get; set; }
+        [Display(Name = "Nazwisko przedsiębiorcy")]
         public string Surname { get; set; }
         public int NumberInEnterpreneurRegister { get; set; }
         public int AddressID { get; set; }
