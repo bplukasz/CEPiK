@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CEPiK.Data
+namespace CEPiK
 {
     public class CepikContext : DbContext
     {
         public CepikContext(DbContextOptions<CepikContext> options) : base(options)
         {
         }
+
 
 
         public DbSet<Car> Cars { get; set; }
@@ -33,5 +34,12 @@ namespace CEPiK.Data
         public DbSet<RegistrationHistory> RegistrationHistory { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbContextOptions<CepikContext> Options { get; }
+
+        public DbSet<Entrepreneur> Entrepreneurs { get; set; }
+        public DbSet<VehicleControlStation> VehicleControlStations { get; set; }
+        public DbSet<Diagnostician> Diagnosticians { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Service> Services { get; set; }
+
     }
 }

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CEPiK.Models.VehicleControlStation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Spis stacji kontroli pojazdów</h2>
+
+<p>
+    <a asp-action="Create">Dodaj nową stacje</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.HouseNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrepreneur.NIP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrepreneur.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrepreneur.Surname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.HouseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrepreneur.NIP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrepreneur.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrepreneur.Surname)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VehicleControlStationID">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.VehicleControlStationID">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.VehicleControlStationID">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
