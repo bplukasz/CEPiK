@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CEPiK.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace CEPiK.Data
             {
                 return;   // DB has been seeded
             }
-
+            
             var addresses = new Address[]
             {
                 new Address { City="Warszawa", Commune="Gmina Warszawa", HouseNumber="23", PostalCode="21-500", Street="Mazowiecka", Voivodeship="Mazowieckie" },
