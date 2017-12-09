@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace CEPiK.Models
 {
     public class Owner
     {
+        [Key]
         public String PESEL { get; set; }
         public String REGON { get; set; }
         public String Name { get; set; }

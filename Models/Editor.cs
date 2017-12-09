@@ -8,6 +8,7 @@ namespace CEPiK.Models
 {
     public class Editor
     {
+        [Key]
         public String PESEL { get; set; }
         public String Name { get; set; }
         public String Surname { get; set; }

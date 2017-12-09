@@ -7,7 +7,9 @@ namespace CEPiK.Models
 {
     public class EditHistory
     {
-        public int EditorID { get; set; }
+        public int EditHistoryID { get; set; }
+        public int PESEL { get; set; }
+
         public Editor Editor { get; set; }
 
         public int VehicleID { get; set; }
