@@ -1,0 +1,29 @@
+﻿@model CEPiK.Models.VehicleCard
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Szczegoly karty pojazdu</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SeriesAndNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SeriesAndNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationData)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationData)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VehicleCardID">Edytuj</a> |
+    <a asp-action="Index">Powrot do listy</a>
+</div>

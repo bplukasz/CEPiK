@@ -1,0 +1,36 @@
+﻿@model CEPiK.Models.VehicleCard
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Dodaj karte pojazdu</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <span asp-validation-for="SeriesAndNumber" class="text-danger"></span>
+            <div class="form-group">
+                <label asp-for="SeriesAndNumber" class="control-label"></label>
+                <input asp-for="SeriesAndNumber" class="form-control" />             
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpirationData" class="control-label"></label>
+                <input asp-for="ExpirationData" class="form-control" />
+                <span asp-validation-for="ExpirationData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Powrot do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

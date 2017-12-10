@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CEPiK.Models.VehicleCard>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Karty pojazdow</h2>
+
+<p>
+    <a asp-action="Create">Dodaj karte</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SeriesAndNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpirationData)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeriesAndNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationData)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VehicleCardID">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.VehicleCardID">Szczegoly</a> |
+                <a asp-action="Delete" asp-route-id="@item.VehicleCardID">Usun</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
