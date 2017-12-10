@@ -9,7 +9,7 @@ namespace CEPiK.Models
     public class Deregister
     {
         public int DeregisterID { get; set; }
-        public DataType DataDeregister { get; set; }
+        public DateTime DataDeregister { get; set; }
         public String ReasonOfDeregistration { get; set; }
         public Boolean CertificateOfDismantling { get; set; }
 

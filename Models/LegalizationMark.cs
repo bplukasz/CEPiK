@@ -8,10 +8,10 @@ namespace CEPiK.Models
 {
     public class LegalizationMark
     {
-        public int LegalizationMarksID { get; set; }
+        public int LegalizationMarkID { get; set; }
         public String Series { get; set; }
         public String Number { get; set; }
-        public DataType DataOfIssue { get; set; }
+        public DateTime DataOfIssue { get; set; }
         public Vehicle Vehicles { get; set; }
 
     }
