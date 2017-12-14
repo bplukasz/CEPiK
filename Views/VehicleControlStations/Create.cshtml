@@ -4,31 +4,180 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Dodaj nową stacje kontroli pojazdu</h2>
+<h2 class="text-center">Dodaj nową stacje kontroli pojazdu</h2>
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <form asp-action="Create">
+        <div class="col-md-4 col-md-offset-1">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <h4>Stacja kontroli pojazdów</h4>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NIP" class="control-label"></label>
-                <select asp-for="NIP" class ="form-control" asp-items="ViewBag.NIP"></select>
+                <label asp-for="Address.PostalCode" class="control-label"></label>
+                <input asp-for="Address.PostalCode" class="form-control" />
+                <span asp-validation-for="Address.PostalCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressID" class="control-label"></label>
-                <select asp-for="AddressID" class ="form-control" asp-items="ViewBag.AddressID"></select>
+                <label asp-for="Address.City" class="control-label"></label>
+                <input asp-for="Address.City" class="form-control" />
+                <span asp-validation-for="Address.City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Dodaj" class="btn btn-default" />
+                <label asp-for="Address.Street" class="control-label"></label>
+                <input asp-for="Address.Street" class="form-control" />
+                <span asp-validation-for="Address.Street" class="text-danger"></span>
             </div>
-        </form>
-    </div>
+            <div class="form-group">
+                <label asp-for="Address.HouseNumber" class="control-label"></label>
+                <input asp-for="Address.HouseNumber" class="form-control" />
+                <span asp-validation-for="Address.HouseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Voivodeship" class="control-label"></label>
+                <input asp-for="Address.Voivodeship" class="form-control" />
+                <span asp-validation-for="Address.Voivodeship" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Commune" class="control-label"></label>
+                <input asp-for="Address.Commune" class="form-control" />
+                <span asp-validation-for="Address.Commune" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-offset-2">
+            <h4>Przedsiębiorca</h4>
+            
+            <div class="form-group">
+                <label asp-for="Entrepreneur.NIP" class="control-label"></label>
+                <input asp-for="Entrepreneur.NIP" class="form-control" />
+                <span asp-validation-for="Entrepreneur.NIP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Name" class="control-label"></label>
+                <input asp-for="Entrepreneur.Name" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Surname" class="control-label"></label>
+                <input asp-for="Entrepreneur.Surname" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Address.PostalCode" class="control-label"></label>
+                <input asp-for="Entrepreneur.Address.PostalCode" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Address.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Address.City" class="control-label"></label>
+                <input asp-for="Entrepreneur.Address.City" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Address.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Address.Street" class="control-label"></label>
+                <input asp-for="Entrepreneur.Address.Street" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Address.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Address.HouseNumber" class="control-label"></label>
+                <input asp-for="Entrepreneur.Address.HouseNumber" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Address.HouseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Address.Voivodeship" class="control-label"></label>
+                <input asp-for="Entrepreneur.Address.Voivodeship" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Address.Voivodeship" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrepreneur.Address.Commune" class="control-label"></label>
+                <input asp-for="Entrepreneur.Address.Commune" class="form-control" />
+                <span asp-validation-for="Entrepreneur.Address.Commune" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h4>Lista zatrudnionych diagnostyków</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Lp.
+                            </th>
+                            <th>
+                                Numer wykonywania zawodu
+                            </th>
+                            <th>
+                                Imie
+                            </th>
+                            <th>
+                                Nazwisko
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1.
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input asp-for="Diagnosticians.ElementAt(0).NumberOfPremissions" class="form-control" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input asp-for="Diagnosticians.ElementAt(0).Name" class="form-control" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input asp-for="Diagnosticians.ElementAt(0).Surname" class="form-control" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Dodaj nowego diagnostyka</a>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h4>Zakres badań technicznych</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Lp.
+                            </th>
+                            <th>Usługa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1.
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input asp-for="Services.ElementAt(0).Name" class="form-control" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Dodaj nową usługę</a>
+            </div>
+        </div>
+        <div class="form-group col-md-offset-10">
+            <input type="submit" value="Dodaj stacje do spisu" class="btn btn-default" />
+        </div>
+    </form>
 </div>
 
 <div>

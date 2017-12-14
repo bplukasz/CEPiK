@@ -1,15 +1,44 @@
 ﻿@model CEPiK.Models.VehicleControlStation
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Informacje szczegółowe";
 }
 
-<h2>Details</h2>
+<h2>Informacje szczegółowe</h2>
 
 <div>
-    <h4>VehicleControlStation</h4>
     <hr />
     <dl class="dl-horizontal">
+        <h4>Przedsiębiorca</h4>
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrepreneur.NIP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrepreneur.NIP)
+        </dd>
+        <dt>
+            Imie
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrepreneur.Name)
+        </dd>
+        <dt>
+            Nazwisko
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrepreneur.Surname)
+        </dd>
+        <dt>
+            Adres siedziby
+        </dt>
+        <dd>
+            @*@Model.Entrepreneur.Address.PostalCode @Model.Entrepreneur.Address.City ul. @Model.Entrepreneur.Address.Street @Model.Entrepreneur.Address.HouseNumber
+                <br />
+                Woj. @Model.Entrepreneur.Address.Voivodeship @Model.Entrepreneur.Address.Commune*@
+        </dd>
+
+        <br />
+        <h4>Stacja kontroli pojazdów</h4>
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -17,20 +46,109 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.Address.Street)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Address.AddressID)
+            @Html.DisplayFor(model => model.Address.Street)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Entrepreneur)
+            @Html.DisplayNameFor(model => model.Address.HouseNumber)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Entrepreneur.NIP)
+            @Html.DisplayFor(model => model.Address.HouseNumber)
         </dd>
-    </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Commune)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.Commune)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.PostalCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.PostalCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Voivodeship)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.Voivodeship)
+        </dd>
+
+        <br />
+        <h4>Diagnostycy</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Lp.
+                    </th>
+                    <th>
+                        Numer wykonywania zawodu
+                    </th>
+                    <th>
+                        Imie
+                    </th>
+                    <th>
+                        Nazwisko
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Diagnosticians != null)
+                {
+                    var lp = 1;
+                    @foreach (Diagnostician item in Model.Diagnosticians)
+                    {
+                        <tr>
+                            <td>@lp</td>
+                            <td>@item.NumberOfPremissions</td>
+                            <td>@item.Name</td>
+                            <td>@item.Surname</td>
+                        </tr>
+                        lp += 1;
+                    }
+                }
+            </tbody>
+        </table>
+                <br />
+                <h4>Zakres badań technicznych</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Lp.
+                    </th>
+                    <th>
+                        Usługa
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Services != null)
+                {
+                    var lp = 1;
+                    @foreach (Service item in Model.Services)
+                    {
+                        <tr>
+                            <td>@lp</td>
+                            <td>@item.Name</td>
+                        </tr>
+                        lp += 1;
+                    }
+                }
+            </tbody>
+        </table>
+            </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.VehicleControlStationID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.VehicleControlStationID">Edytuj</a> |
+    <a asp-action="Index">Powrót do listy stacji</a>
 </div>
