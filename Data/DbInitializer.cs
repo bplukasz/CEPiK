@@ -18,15 +18,6 @@ namespace CEPiK.Data
                 return;   // DB has been seeded
             }
 
-            var vehicless = new Vehicle[]
-            {
-                new Vehicle{VIN="1111111111111111"},
-            };
-            foreach(Vehicle vehicle in vehicless)
-            {
-                context.Vehicles.Add(vehicle);
-            }
-
             var addresses = new Address[]
             {
                 new Address { City="Warszawa", Commune="Gmina Warszawa", HouseNumber="23", PostalCode="21-500", Street="Mazowiecka", Voivodeship="Mazowieckie" },
