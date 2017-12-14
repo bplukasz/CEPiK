@@ -14,7 +14,7 @@ namespace CEPiK.Models
 
 
         [RegularExpression(@"^[A-Z]{2}\\[A-Z]{3}[ ][0-9]{7}", ErrorMessage = "Wymagany format seri XX\\XXX XXXXXXX")]
-        [Required(ErrorMessage = "Pole jest puste !")]
+        //[Required(ErrorMessage = "Pole jest puste !")]
         [Display(Name = "Seria i numer karty")]
         [Remote("ValidateEmployeeNo", "VehicleCards", ErrorMessage = "Podana karta już istnieje w systemie")]
         public String SeriesAndNumber { get; set; }
