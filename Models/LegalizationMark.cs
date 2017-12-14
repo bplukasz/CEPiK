@@ -11,7 +11,7 @@ namespace CEPiK.Models
         public int LegalizationMarkID { get; set; }
         public String Series { get; set; }
         public String Number { get; set; }
-        public DataType DataOfIssue { get; set; }
+        public DateTime DataOfIssue { get; set; }
         public Vehicle Vehicles { get; set; }
 
     }

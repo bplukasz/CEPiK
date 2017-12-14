@@ -9,8 +9,8 @@ namespace CEPiK.Models
     public class TidalWithdrawal
     {
         public int TidalWithdrawalID { get; set; }
-        public DataType DateWithdrawal { get; set; }
-        public DataType DataRestore { get; set; }
+        public DateTime DateWithdrawal { get; set; }
+        public DateTime DataRestore { get; set; }
 
         public Vehicle Vehicles { get; set; }
 

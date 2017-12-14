@@ -22,22 +22,13 @@
                 @Html.DisplayNameFor(model => model.Name)
                </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address.Street)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address.HouseNumber)
+                Adres stacji
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Entrepreneur.NIP)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Entrepreneur.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entrepreneur.Surname)
+                Imie i nazwisko przedsiębiorcy
             </th>
             <th></th>
         </tr>
@@ -49,22 +40,15 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address.Street)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address.HouseNumber)
+                @item.Address.PostalCode @item.Address.City ul. @item.Address.Street @item.Address.HouseNumber 
+                <br />
+                Woj. @item.Address.Voivodeship @item.Address.Commune
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Entrepreneur.NIP)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Entrepreneur.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Entrepreneur.Surname)
+                @item.Entrepreneur.Name @item.Entrepreneur.Surname
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.VehicleControlStationID">Edytuj</a> |

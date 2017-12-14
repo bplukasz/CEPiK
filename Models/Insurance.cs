@@ -16,9 +16,9 @@ namespace CEPiK.Models
         public String InsurenceCompany { get; set; }
         public String NameOfConfirmationDocument { get; set; }
         public String SeriesOfConfirmationDocument { get; set; }
-        public DataType DataOfTheContractExecution { get; set; }
-        public DataType ProtectionPeriod { get; set; }
-        public DataType ExpirationData { get; set; }
+        public DateTime DataOfTheContractExecution { get; set; }
+        public DateTime ProtectionPeriod { get; set; }
+        public DateTime ExpirationData { get; set; }
 
         public Vehicle Vehicles { get; set; }
 

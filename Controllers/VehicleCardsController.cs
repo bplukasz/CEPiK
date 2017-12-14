@@ -16,9 +16,16 @@ namespace CEPiK.Controllers
         }
 
         // GET: VehicleCards
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.VehicleCards.ToListAsync());
+            var cards = from m in _context.VehicleCards select m;
+
+            if (cards != null)
+            {
+                cards = cards.Where(s => s.SeriesAndNumber.Contains(searchString));
+            }
+
+            return View(await cards.ToListAsync());
         }
 
         // GET: VehicleCards/Details/5
@@ -50,7 +57,7 @@ namespace CEPiK.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VehicleCardID,Number,Series,ExpirationData")] VehicleCard vehicleCard)
+        public async Task<IActionResult> Create([Bind("VehicleCardID, SeriesAndNumber, ExpirationData")] VehicleCard vehicleCard)
         {
             if (ModelState.IsValid)
             {
@@ -144,6 +151,16 @@ namespace CEPiK.Controllers
         private bool VehicleCardExists(int id)
         {
             return _context.VehicleCards.Any(e => e.VehicleCardID == id);
+        }
+        
+        public JsonResult ValidateEmployeeNo(string seriesAndNumber)
+        {
+            bool cardExisting = _context.VehicleCards.Any(m => m.SeriesAndNumber == seriesAndNumber);
+            if (cardExisting  == true)
+            {
+                return Json(false);
+            }
+            return Json(true);
         }
     }
 }

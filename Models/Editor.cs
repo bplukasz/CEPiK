@@ -12,7 +12,7 @@ namespace CEPiK.Models
         public String PESEL { get; set; }
         public String Name { get; set; }
         public String Surname { get; set; }
-        public DataType EditData { get; set; }
+        public DateTime EditData { get; set; }
 
         public ICollection<EditHistory> EditHistory { get; set; }
 

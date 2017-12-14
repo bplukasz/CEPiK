@@ -45,8 +45,8 @@ namespace CEPiK.Controllers
         // GET: VehicleControlStations/Create
         public IActionResult Create()
         {
-            ViewData["AddressID"] = new SelectList(_context.Addresses, "AddressID", "AddressID");
-            ViewData["NIP"] = new SelectList(_context.Entrepreneurs, "NIP", "NIP");
+            //ViewData["AddressID"] = new SelectList(_context.Addresses, "AddressID", "AddressID");
+            //ViewData["NIP"] = new SelectList(_context.Entrepreneurs, "NIP", "NIP");
             return View();
         }
 
@@ -55,7 +55,7 @@ namespace CEPiK.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VehicleControlStationID,Name,NIP,AddressID")] VehicleControlStation vehicleControlStation)
+        public async Task<IActionResult> Create(VehicleControlStation vehicleControlStation)
         {
             if (ModelState.IsValid)
             {
@@ -63,8 +63,8 @@ namespace CEPiK.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AddressID"] = new SelectList(_context.Addresses, "AddressID", "AddressID", vehicleControlStation.AddressID);
-            ViewData["NIP"] = new SelectList(_context.Entrepreneurs, "NIP", "NIP", vehicleControlStation.NIP);
+            //ViewData["AddressID"] = new SelectList(_context.Addresses, "AddressID", "AddressID", vehicleControlStation.AddressID);
+            //ViewData["NIP"] = new SelectList(_context.Entrepreneurs, "NIP", "NIP", vehicleControlStation.NIP);
             return View(vehicleControlStation);
         }
 

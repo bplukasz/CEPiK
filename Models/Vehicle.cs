@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -22,9 +22,9 @@ namespace CEPiK.Models
         [Display(Name = "Number Podwozia")]
         public String BodyNumber { get; set; }
         [Display(Name = "Rok produkcji")]
-        public DataType ManufactureYear { get; set; }
+        public DateTime ManufactureYear { get; set; }
         [Display(Name = "Dotychczasowy numer rejestracyjny")]
-        public DataType InitialRegistration { get; set; }
+        public DateTime InitialRegistration { get; set; }
         [Display(Name = "Dostosowany do pogody")]
         public Boolean WeatherDependent { get; set; }
         [Display(Name = "Punkt rejestracji")]
