@@ -15,11 +15,11 @@ namespace CEPiK.Models
         public Boolean ECTypeApproval { get; set; }
         public String VIN { get; set; }
         public String BodyNumber { get; set; }
-        public DataType ManufactureYear { get; set; }
-        public DataType InitialRegistration { get; set; }
+        public DateTime ManufactureYear { get; set; }
+        public DateTime InitialRegistration { get; set; }
         public Boolean WeatherDependent { get; set; }
         public String RegistrationAuthority { get; set; }
-        public DataType DataOfTheBodyNumber { get; set; }
+        public DateTime DataOfTheBodyNumber { get; set; }
         public String Destination { get; set; }
         public float EngineSize { get; set; }
         public float EnginePower { get; set; }
@@ -29,7 +29,7 @@ namespace CEPiK.Models
         public float PermissibleAxleLoad { get; set; }
         public float MaximumTowedMassOfTheTrailer { get; set; }
         public int Allocation { get; set; }
-        public DataType FirstRegistrationAbroad { get; set; }
+        public DateTime FirstRegistrationAbroad { get; set; }
         public String Subgenus { get; set; }
         public String SuspensionType { get; set; }
         public float AverageFuelConsumption { get; set; }

@@ -18,6 +18,15 @@ namespace CEPiK.Data
                 return;   // DB has been seeded
             }
 
+            var vehicless = new Vehicle[]
+            {
+                new Vehicle{VIN="1111111111111111"},
+            };
+            foreach(Vehicle vehicle in vehicless)
+            {
+                context.Vehicles.Add(vehicle);
+            }
+
             var addresses = new Address[]
             {
                 new Address { City="Warszawa", Commune="Gmina Warszawa", HouseNumber="23", PostalCode="21-500", Street="Mazowiecka", Voivodeship="Mazowieckie" },
@@ -35,11 +44,11 @@ namespace CEPiK.Data
 
             var entrepreneurs = new Entrepreneur[]
             {
-                new Entrepreneur {NIP=5423642344, Name="Jan", Surname="Kowalski",  NumberInEnterpreneurRegister=2332, Address = addresses[0]},
-                new Entrepreneur {NIP=5423642000, Name="Adam", Surname="Kwiatkowski",  NumberInEnterpreneurRegister=23, Address = addresses[1] },
-                new Entrepreneur {NIP=5423642001, Name="Konrad", Surname="Chmielewski",  NumberInEnterpreneurRegister=2353, Address = addresses[2] },
-                new Entrepreneur {NIP=5423642002, Name="Janina", Surname="Chudzikiewicz",  NumberInEnterpreneurRegister=6423, Address = addresses[3] },
-                new Entrepreneur {NIP=5423642003, Name="Tomasz", Surname="Chudy",  NumberInEnterpreneurRegister=5424, Address = addresses[4] },
+                new Entrepreneur {NIP=5423642344, Name="Jan", Surname="Kowalski",  NumberInEnterpreneurRegister=2332 },
+                new Entrepreneur {NIP=5423642000, Name="Adam", Surname="Kwiatkowski",  NumberInEnterpreneurRegister=23 },
+                new Entrepreneur {NIP=5423642001, Name="Konrad", Surname="Chmielewski",  NumberInEnterpreneurRegister=2353 },
+                new Entrepreneur {NIP=5423642002, Name="Janina", Surname="Chudzikiewicz",  NumberInEnterpreneurRegister=6423 },
+                new Entrepreneur {NIP=5423642003, Name="Tomasz", Surname="Chudy",  NumberInEnterpreneurRegister=5424 },
             };
 
             foreach (Entrepreneur entrepreneur in entrepreneurs)
@@ -83,11 +92,11 @@ namespace CEPiK.Data
 
                 var vehicleControlStations = new VehicleControlStation[]
                 {
-                new VehicleControlStation { Name="U Romana" , AddressID = 4, Diagnosticians = {diagnosticians[0]}, Entrepreneur =entrepreneurs[0] , NIP =5423642344, Services = {services[0], services[2]}},
-                new VehicleControlStation { Name="Stacja" , AddressID = 3, Diagnosticians = {diagnosticians[5],diagnosticians[6],diagnosticians[7]}, Entrepreneur =entrepreneurs[1] , NIP =5423642000, Services = {services[1], services[3]}},
-                new VehicleControlStation { Name="Kontroli" , AddressID = 2, Diagnosticians = {diagnosticians[1] }, Entrepreneur =entrepreneurs[2] , NIP =5423642001, Services = {services[0], services[4]}},
-                new VehicleControlStation {Name="Pojazdów" , AddressID = 1, Diagnosticians = {diagnosticians[2] }, Entrepreneur =entrepreneurs[3] , NIP =5423642002, Services = {services[2], services[3]}},
-                new VehicleControlStation {Name="Zapraszamy" , AddressID = 0, Diagnosticians = {diagnosticians[4] }, Entrepreneur =entrepreneurs[4] , NIP =5423642003, Services = {services[0], services[3]}},
+                new VehicleControlStation { Name="U Romana" , Address = addresses[0], Diagnosticians = {diagnosticians[0]}, Entrepreneur =entrepreneurs[0] , NIP =5423642344, Services = {services[0], services[2]}},
+                new VehicleControlStation { Name="Stacja" , Address = addresses[1], Diagnosticians = {diagnosticians[5],diagnosticians[6],diagnosticians[7]}, Entrepreneur =entrepreneurs[1] , NIP =5423642000, Services = {services[1], services[3]}},
+                new VehicleControlStation { Name="Kontroli" , Address = addresses[2], Diagnosticians = {diagnosticians[1] }, Entrepreneur =entrepreneurs[2] , NIP =5423642001, Services = {services[0], services[4]}},
+                new VehicleControlStation {Name="Pojazdów" , Address = addresses[3], Diagnosticians = {diagnosticians[2] }, Entrepreneur =entrepreneurs[3] , NIP =5423642002, Services = {services[2], services[3]}},
+                new VehicleControlStation {Name="Zapraszamy" , Address = addresses[4], Diagnosticians = {diagnosticians[4] }, Entrepreneur =entrepreneurs[4] , NIP =5423642003, Services = {services[0], services[3]}},
                 };
 
                 foreach (VehicleControlStation vehicleControlStation in vehicleControlStations)

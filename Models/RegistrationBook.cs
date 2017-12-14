@@ -11,9 +11,9 @@ namespace CEPiK.Models
         public int RegistrationBookID { get; set; }
         public String Number { get; set; }
         public String Series { get; set; }
-        public DataType ExpirationData { get; set; }
+        public DateTime ExpirationData { get; set; }
         public Boolean TidalPermission { get; set; }
-        public DataType ReleaseData { get; set; }
+        public DateTime ReleaseData { get; set; }
 
         public Vehicle Vehicles { get; set; }
         public ICollection<Loss> Losses { get; set; }

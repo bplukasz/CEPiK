@@ -9,8 +9,8 @@ namespace CEPiK.Models
     public class TemporaryStickers
     {
         public int TemporaryStickersID { get; set; }
-        public DataType ReleaseOfTheControlSticker { get; set; }
-        public DataType ReleaseOfTheTemporaryBoardSticker { get; set; }
+        public DateTime ReleaseOfTheControlSticker { get; set; }
+        public DateTime ReleaseOfTheTemporaryBoardSticker { get; set; }
 
         public Vehicle vehicle { get; set; }
 

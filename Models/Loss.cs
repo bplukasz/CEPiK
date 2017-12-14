@@ -18,7 +18,7 @@ namespace CEPiK.Models
         public Boolean RediscoveryOfTheTemporaryPermit { get; set; }
         public Boolean RediscoveryOfTheTemporaryBoard { get; set; }
         public Boolean RediscoveryOfTheVehicaleCard { get; set; }
-        public DataType DataOfEvent { get; set; }
+        public DateTime DataOfEvent { get; set; }
         public Boolean RetentionOfEvidence { get; set; }
         public Boolean RetentionOfTheTemporaryPermit { get; set; }
         public Boolean CommitmentEvidence { get; set; }

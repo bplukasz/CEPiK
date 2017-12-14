@@ -4,24 +4,17 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Usuwanie karty pojazdu</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>VehicleCard</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Number)
+            @Html.DisplayNameFor(model => model.SeriesAndNumber)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Number)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Series)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Series)
+            @Html.DisplayFor(model => model.SeriesAndNumber)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ExpirationData)
@@ -33,7 +26,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="VehicleCardID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Usun" class="btn btn-default" /> |
+        <a asp-action="Index">Powrot do listy</a>
     </form>
 </div>
