@@ -20,9 +20,16 @@ namespace CEPiK.Controllers
         }
 
         // GET: VehicleCards
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.VehicleCards.ToListAsync());
+            var cards = from m in _context.VehicleCards select m;
+
+            if (cards != null)
+            {
+                cards = cards.Where(s => s.SeriesAndNumber.Contains(searchString));
+            }
+
+            return View(await cards.ToListAsync());
         }
 
         // GET: VehicleCards/Details/5
@@ -154,6 +161,16 @@ namespace CEPiK.Controllers
         {
             bool cardExisting = _context.VehicleCards.Any(m => m.SeriesAndNumber == seriesAndNumber);
             if (cardExisting  == true)
+            {
+                return Json(false);
+            }
+            return Json(true);
+        }
+
+        public JsonResult ValidateVin(string vin)
+        {
+            bool cardExisting = _context.VehicleCards.Any(m => m.Vehicles.VIN == vin);
+            if (cardExisting == true)
             {
                 return Json(false);
             }

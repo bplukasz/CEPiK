@@ -12,18 +12,19 @@ namespace CEPiK.Models
     {
         public int VehicleCardID { get; set; }
 
-        
+
         [RegularExpression(@"^[A-Z]{2}\\[A-Z]{3}[ ][0-9]{7}", ErrorMessage = "Wymagany format seri XX\\XXX XXXXXXX")]
-        [Required(ErrorMessage ="Pole jest puste !")]
+        [Required(ErrorMessage = "Pole jest puste !")]
         [Display(Name = "Seria i numer karty")]
         [Remote("ValidateEmployeeNo", "VehicleCards", ErrorMessage = "Podana karta już istnieje w systemie")]
         public String SeriesAndNumber { get; set; }
 
-        [Required(ErrorMessage ="Nie podano daty !")]
+        [Required(ErrorMessage = "Nie podano daty !")]
         [DataType(DataType.Date)]
         [Display(Name = "Data wydania")]
         public DateTime ExpirationData { get; set; }
-
+        //[Remote("ValidateVin", "VehicleCards", ErrorMessage = "Brak samochodu w bazie")]
+        [Display(Name = "Numer vin samochodu")]
         public Vehicle Vehicles { get; set; }
         public ICollection<Loss> Losses { get; set; }
 
