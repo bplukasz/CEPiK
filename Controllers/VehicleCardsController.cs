@@ -156,5 +156,15 @@ namespace CEPiK.Controllers
         {
             return _context.VehicleCards.Any(e => e.VehicleCardID == id);
         }
+        
+        public JsonResult ValidateEmployeeNo(string seriesAndNumber)
+        {
+            bool cardExisting = _context.VehicleCards.Any(m => m.SeriesAndNumber == seriesAndNumber);
+            if (cardExisting  == true)
+            {
+                return Json(false);
+            }
+            return Json(true);
+        }
     }
 }
