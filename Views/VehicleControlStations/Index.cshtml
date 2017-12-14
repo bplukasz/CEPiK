@@ -9,12 +9,18 @@
 <p>
     <a asp-action="Create">Dodaj nową stacje</a>
 </p>
+<form asp-controller="VehicleControlStations" asp-action="Index">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
-            </th>
+               </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address.City)
             </th>

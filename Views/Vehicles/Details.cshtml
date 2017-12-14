@@ -1,0 +1,278 @@
+﻿@model CEPiK.Models.Vehicle
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Szczegóły</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.CarBrand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.CarBrand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.Model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleCard.Number)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleCard.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeApprovalCertificate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TypeApprovalCertificate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ECTypeApproval)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ECTypeApproval)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BodyNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BodyNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufactureYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ManufactureYear)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InitialRegistration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InitialRegistration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeatherDependent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeatherDependent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationAuthority)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationAuthority)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOfTheBodyNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataOfTheBodyNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EngineSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EngineSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EnginePower)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnginePower)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GrossVehicleWeightRating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GrossVehicleWeightRating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowedPackage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AllowedPackage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AxleNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AxleNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PermissibleAxleLoad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PermissibleAxleLoad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumTowedMassOfTheTrailer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaximumTowedMassOfTheTrailer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Allocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Allocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstRegistrationAbroad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstRegistrationAbroad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subgenus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Subgenus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SuspensionType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SuspensionType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageFuelConsumption)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AverageFuelConsumption)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumTotalWeight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaximumTotalWeight)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DeadweightLoad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeadweightLoad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Equipment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RadarDevice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RadarDevice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AutomobileMaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AutomobileMaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Wheelbase)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Wheelbase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WheelbaseMIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WheelbaseMIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WheelbaseAVG)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WheelbaseAVG)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WheelbaseMAX)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WheelbaseMAX)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Car)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.CarID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Owner.PESEL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationBook)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationBook.RegistrationBookID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TechnicalResearch)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TechnicalResearch.TechnicalResearchID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleCard)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleCard.VehicleCardID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VehicleID">Edit</a> |
+    <a asp-action="Index">Wróć</a>
+</div>
