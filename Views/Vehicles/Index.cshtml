@@ -1,0 +1,135 @@
+﻿@model IEnumerable<CEPiK.Models.Vehicle>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Pojazd</h2>
+<p>
+    <a asp-action="Create">Stwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car.CarBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufactureYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InitialRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EngineSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AverageFuelConsumption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaximumTotalWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Owner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationBook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalResearch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleCard)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarBrand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufactureYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InitialRegistration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EngineSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnginePower)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AverageFuelConsumption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaximumTotalWeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Owner.PESEL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationBook.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalResearch.TechnicalResearchID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleCard.Number)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.VehicleID">Edytuj</a> |
+                    <a asp-action="Details" asp-route-id="@item.VehicleID">Szczegóły</a> |
+                    <a asp-action="Delete" asp-route-id="@item.VehicleID">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

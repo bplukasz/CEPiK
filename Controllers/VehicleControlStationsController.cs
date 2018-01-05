@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CEPiK.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CEPiK.Data;
-using CEPiK.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CEPiK.Controllers
 {
@@ -25,7 +22,6 @@ namespace CEPiK.Controllers
             var cepikContext = _context.VehicleControlStations.Include(v => v.Address).Include(v => v.Entrepreneur);
             return View(await cepikContext.ToListAsync());
         }
-
         // GET: VehicleControlStations/Details/5
         public async Task<IActionResult> Details(int? id)
         {
