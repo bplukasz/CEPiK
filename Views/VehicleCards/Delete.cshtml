@@ -4,8 +4,8 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Usuwanie karty pojazdu</h2>
 
+<h2>Usuwanie karty pojazdu</h2>
 <div>
     <h4>VehicleCard</h4>
     <hr />
@@ -21,6 +21,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ExpirationData)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
         </dd>
     </dl>
     

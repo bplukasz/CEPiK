@@ -13,8 +13,6 @@ namespace CEPiK
         {
         }
 
-
-
         public DbSet<Car> Cars { get; set; }
         public DbSet<Carjacking> Carjackings { get; set; }
         public DbSet<Deregister> Deregisters { get; set; }
@@ -40,6 +38,7 @@ namespace CEPiK
         public DbSet<Diagnostician> Diagnosticians { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<User> User { get; set; }
 
     }
 }

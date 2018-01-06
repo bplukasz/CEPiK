@@ -1,8 +1,9 @@
-﻿using CEPiK.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using CEPiK.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CEPiK.Controllers
 {
@@ -27,6 +28,7 @@ namespace CEPiK.Controllers
 
             return View(await cards.ToListAsync());
         }
+
 
         // GET: VehicleCards/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -57,7 +59,7 @@ namespace CEPiK.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VehicleCardID, SeriesAndNumber, ExpirationData")] VehicleCard vehicleCard)
+        public async Task<IActionResult> Create([Bind("VehicleCardID,SeriesAndNumber,ExpirationData,VIN")] VehicleCard vehicleCard)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +91,7 @@ namespace CEPiK.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("VehicleCardID,Number,Series,ExpirationData")] VehicleCard vehicleCard)
+        public async Task<IActionResult> Edit(int id, [Bind("VehicleCardID,SeriesAndNumber,ExpirationData,VIN")] VehicleCard vehicleCard)
         {
             if (id != vehicleCard.VehicleCardID)
             {
@@ -152,15 +154,27 @@ namespace CEPiK.Controllers
         {
             return _context.VehicleCards.Any(e => e.VehicleCardID == id);
         }
-        
-        public JsonResult ValidateEmployeeNo(string seriesAndNumber)
+
+        public JsonResult ValidateVIN(String vin)
+        {
+            
+
+            bool carExisting = _context.Vehicles.Any(m => m.VIN == vin);
+            if (carExisting == true)
+            {
+                return Json(true);
+            }
+            return Json(false);
+        }
+        public JsonResult ValidateNumberAndSerial(string seriesAndNumber)
         {
             bool cardExisting = _context.VehicleCards.Any(m => m.SeriesAndNumber == seriesAndNumber);
-            if (cardExisting  == true)
+            if (cardExisting == true)
             {
                 return Json(false);
             }
             return Json(true);
         }
+
     }
 }

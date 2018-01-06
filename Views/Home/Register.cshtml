@@ -1,0 +1,43 @@
+﻿@model CEPiK.Models.User
+@{ 
+    ViewData["Title"] = "Register";
+}
+
+<h2>Rejestracja</h2>
+
+<div class="form-horizontal">
+    <form asp-controller="Home" asp-action="Register" method="post">
+        @if(ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+        }
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <spam asp-validation-for="Name" class="text-danger"></spam>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserName" class="form-control" />
+                <spam asp-validation-for="UserName" class="text-danger"></spam>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Password" class="form-control" />
+                <spam asp-validation-for="Password" class="text-danger"></spam>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">Zarejestruj</button>
+            </div>
+        </div>
+    </form>
+</div>

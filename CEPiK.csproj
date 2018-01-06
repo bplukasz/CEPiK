@@ -6,22 +6,25 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\**" />
+    <Compile Remove="ViewModels\VehicleCards\**" />
     <Content Remove="Migrations\**" />
+    <Content Remove="ViewModels\VehicleCards\**" />
     <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="ViewModels\VehicleCards\**" />
     <None Remove="Migrations\**" />
+    <None Remove="ViewModels\VehicleCards\**" />
   </ItemGroup>
 
   <ItemGroup>
+    
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\VehicleCards\" />
   </ItemGroup>
 
 </Project>
