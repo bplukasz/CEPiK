@@ -157,8 +157,6 @@ namespace CEPiK.Controllers
 
         public JsonResult ValidateVIN(String vin)
         {
-            
-
             bool carExisting = _context.Vehicles.Any(m => m.VIN == vin);
             if (carExisting == true)
             {

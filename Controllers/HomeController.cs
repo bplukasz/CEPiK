@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using CEPiK.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CEPiK.Controllers
 {
@@ -43,7 +44,7 @@ namespace CEPiK.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Register(Models.CepikContext user)
+        public ActionResult Register(User user)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +52,7 @@ namespace CEPiK.Controllers
                 _context.SaveChanges();
 
                 ModelState.Clear();
-                ViewBag.Message = user.Name + " is successfully registered";
+                ViewBag.Message = user.Name + " został zarejestrowany";
             }
             return View();
         }
@@ -62,14 +63,14 @@ namespace CEPiK.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Models.CepikContext user)
+        public ActionResult Login(User user)
         {
             var account = _context.User.Where(u => u.UserName == user.UserName && u.Password == user.Password).FirstOrDefault();
             if(account != null)
             {
-                HttpContext.Session.SetString("UserID", account.ID.ToString());
-                HttpContext.Session.SetString("UserName", account.UserName);
-                return RedirectToAction("Witamy !");
+                HttpContext.Session.SetString("ID", account.ID.ToString());
+                HttpContext.Session.SetString("Name", account.Name);
+                return RedirectToAction("Welcome");
             }
             else
             {
@@ -82,12 +83,12 @@ namespace CEPiK.Controllers
         {
             if(HttpContext.Session.GetString("ID") != null)
             {
-                ViewBag.UserName = HttpContext.Session.GetString("UserName");
+                ViewBag.Name = HttpContext.Session.GetString("Name");
                 return View();
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Welcome");
             }
         }
 
@@ -96,5 +97,16 @@ namespace CEPiK.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index");
         }
+
+        public JsonResult ValidateUserName(string UserName)
+        {
+            bool userExisting = _context.User.Any(m => m.UserName == UserName);
+            if (userExisting == true)
+            {
+                return Json(false);
+            }
+            return Json(true);
+        }
+
     }
 }

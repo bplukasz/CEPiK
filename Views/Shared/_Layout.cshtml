@@ -29,20 +29,20 @@
                 </button>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CEPiK</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div  class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="VehicleControlStations" asp-action="Index">Stacje Kontroli Pojazdów</a></li>
-                    <li><a asp-area="" asp-controller="VehicleCards" asp-action="Index">Karta Pojazdu</a></li>
-                    <li><a asp-area="" asp-controller="Vehicles" asp-action="Index">Rejestracja Pojazdu</a></li>
-                    <li><a asp-area="" asp-controller="Cars" asp-action="Index">Pojazdy</a></li>
                     @if (Context.Session.GetString("ID") != null)
                     {
+                        <li><a asp-area="" asp-controller="VehicleControlStations" asp-action="Index">Stacje Kontroli Pojazdów</a></li>
+                        <li><a asp-area="" asp-controller="VehicleCards" asp-action="Index">Karta Pojazdu</a></li>
+                        <li><a asp-area="" asp-controller="Vehicles" asp-action="Index">Rejestracja Pojazdu</a></li>
+                        <li><a asp-area="" asp-controller="Cars" asp-action="Index">Pojazdy</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Logout">Wyloguj</a></li>
                     }
                     else
                     {
-                        <li><a asp-area="" asp-controller="Home" asp-action="Register">Zarejestruj</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Login">Zaloguj</a></li>
+                        <li ><a asp-area="" asp-controller="Home" asp-action="Register">Zarejestruj</a></li>
+                        <li ><a asp-area="" asp-controller="Home" asp-action="Login">Zaloguj</a></li>
                     }
                 </ul>
             </div>

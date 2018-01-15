@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace CEPiK
 {
@@ -22,9 +25,9 @@ namespace CEPiK
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             // services.AddMvc();
 
-            services.AddMvc()
-        .AddSessionStateTempDataProvider();
+            services.AddMvc();
             services.AddSession();
+           
 
         }
 
@@ -43,7 +46,10 @@ namespace CEPiK
             }
 
             app.UseStaticFiles();
+
            
+
+            app.UseMvcWithDefaultRoute();
 
             app.UseMvc(routes =>
             {
