@@ -19,13 +19,7 @@ namespace CEPiK.Controllers
         // GET: VehicleCards
         public async Task<IActionResult> Index(string searchString)
         {
-            var cards = from m in _context.VehicleCards select m;
-
-            if (cards != null)
-            {
-                cards = cards.Where(s => s.SeriesAndNumber.Contains(searchString));
-            }
-
+            var cards = from m in _context.VehicleCards where m.SeriesAndNumber.Contains(searchString) select m;
             return View(await cards.ToListAsync());
         }
 

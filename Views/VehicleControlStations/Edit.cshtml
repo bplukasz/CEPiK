@@ -1,43 +1,225 @@
 ﻿@model CEPiK.Models.VehicleControlStation
 
-@{
-    ViewData["Title"] = "Edit";
-}
 
-<h2>Edit</h2>
+<h2 class="text-center">Edycja stacji kontroli pojazdu</h2>
 
-<h4>VehicleControlStation</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="VehicleControlStationID" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+            <div class="col-md-4 col-md-offset-1">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <h4>Stacja kontroli pojazdów</h4>
+                <div class="form-group">
+                    <label asp-for="@Model.Name" class="control-label"></label>
+                    <input asp-for="@Model.Name" class="form-control" />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address.PostalCode" class="control-label"></label>
+                    <input asp-for="@Model.Address.PostalCode" class="form-control" />
+                    <span asp-validation-for="@Model.Address.PostalCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address.City" class="control-label"></label>
+                    <input asp-for="@Model.Address.City" class="form-control" />
+                    <span asp-validation-for="@Model.Address.City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address.Street" class="control-label"></label>
+                    <input asp-for="@Model.Address.Street" class="form-control" />
+                    <span asp-validation-for="@Model.Address.Street" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address.HouseNumber" class="control-label"></label>
+                    <input asp-for="@Model.Address.HouseNumber" class="form-control" />
+                    <span asp-validation-for="@Model.Address.HouseNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address.Voivodeship" class="control-label"></label>
+                    <input asp-for="@Model.Address.Voivodeship" class="form-control" />
+                    <span asp-validation-for="@Model.Address.Voivodeship" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address.Commune" class="control-label"></label>
+                    <input asp-for="@Model.Address.Commune" class="form-control" />
+                    <span asp-validation-for="@Model.Address.Commune" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="NIP" class="control-label"></label>
-                <select asp-for="NIP" class="form-control" asp-items="ViewBag.NIP"></select>
-                <span asp-validation-for="NIP" class="text-danger"></span>
+            <div class="col-md-4 col-md-offset-2">
+                <h4>Przedsiębiorca</h4>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.NIP" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.NIP" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.NIP" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Name" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Name" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Surname" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Surname" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Address.PostalCode" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Address.PostalCode" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Address.PostalCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Address.City" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Address.City" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Address.City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Address.Street" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Address.Street" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Address.Street" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Address.HouseNumber" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Address.HouseNumber" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Address.HouseNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Address.Voivodeship" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Address.Voivodeship" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Address.Voivodeship" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Entrepreneur.Address.Commune" class="control-label"></label>
+                    <input asp-for="@Model.Entrepreneur.Address.Commune" class="form-control" />
+                    <span asp-validation-for="@Model.Entrepreneur.Address.Commune" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AddressID" class="control-label"></label>
-                <select asp-for="AddressID" class="form-control" asp-items="ViewBag.AddressID"></select>
-                <span asp-validation-for="AddressID" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h4>Lista zatrudnionych diagnostyków</h4>
+                    <table id="diagnosticians-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Lp.
+                                </th>
+                                <th>
+                                    Numer wykonywania zawodu
+                                </th>
+                                <th>
+                                    Imie
+                                </th>
+                                <th>
+                                    Nazwisko
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="diagnosticians_input_table">
+                                <td>
+                                    1.
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input asp-for="@Model.Diagnosticians[0].NumberOfPremissions" class="form-control" />
+                                        <span asp-validation-for="@Model.Diagnosticians[0].NumberOfPremissions" class="text-danger"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input asp-for="@Model.Diagnosticians[0].Name" class="form-control" />
+                                        <span asp-validation-for="@Model.Diagnosticians[0].Name" class="text-danger"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input asp-for="@Model.Diagnosticians[0].Surname" class="form-control" />
+                                        <span asp-validation-for="@Model.Diagnosticians[0].Surname" class="text-danger"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#diagnosticians_input_table" onclick="addDiagnosticianRow()">Dodaj nowego diagnostyka</a>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <br />
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h4>Zakres badań technicznych</h4>
+                    <table id="services-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Lp.
+                                </th>
+                                <th>Usługa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    1.
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input asp-for="@Model.Services[0].Name" class="form-control" />
+                                        <span asp-validation-for="@Model.Services[0].Name" class="text-danger"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#services-table" onclick="addServiceRow()">Dodaj nową usługę</a>
+                </div>
+            </div>
+            <div class="form-group col-md-offset-10">
+                <input type="submit" value="Zapisz zmiany" class="btn btn-default" />
             </div>
         </form>
-    </div>
 </div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    function addDiagnosticianRow() {
+        var tableRef = document.getElementById('diagnosticians-table').getElementsByTagName('tbody')[0];
+
+        var newRow = tableRef.insertRow(tableRef.rows.length);
+
+        var lpCell = newRow.insertCell(0);
+        var numberOfPremissions = newRow.insertCell(1);
+        var name = newRow.insertCell(2);
+        var surname = newRow.insertCell(3);
+
+        var lp = tableRef.rows.length;
+        var arrayLp = lp - 1;
+        // Append a text node to the cell
+        lpCell.innerHTML = lp + '.';
+        numberOfPremissions.innerHTML = '<div class="form-group"><input class="form-control valid" data-val="true" data-val-regex="Numer uprawnień nie zgodny z formatem (4 cyfry)" data-val-regex-pattern="^[0-9]{4}" data-val-required="Nie podano numeru uprawnień diagnostyka" id="Diagnosticians_' + arrayLp + '__NumberOfPremissions" name="Diagnosticians[' + arrayLp + '].NumberOfPremissions" value="" aria-required="true" aria-invalid="false" aria-describedby="Diagnosticians_' + arrayLp + '__NumberOfPremissions-error" type="number"></div>';
+        name.innerHTML = '<div class="form-group"><input class="form-control" data-val="true" data-val-required="Nie podano imienia diagnostyka" id="Diagnosticians_' + arrayLp + '__Name" name="Diagnosticians[' + arrayLp + '].Name" value="" type="text"></div>';
+        surname.innerHTML = '<div class="form-group"><input class="form-control" data-val="true" data-val-required="Nie podano nazwiska diagnostyka" id="Diagnosticians_' + arrayLp + '__Surname" name="Diagnosticians[' + arrayLp + '].Surname" value="" type="text"></div>';
+    }
+
+    function addServiceRow() {
+        var tableRef = document.getElementById('services-table').getElementsByTagName('tbody')[0];
+
+        var newRow = tableRef.insertRow(tableRef.rows.length);
+
+        var lpCell = newRow.insertCell(0);
+        var service = newRow.insertCell(1);
+
+        var lp = tableRef.rows.length;
+        var arrayLp = lp - 1;
+        // Append a text node to the cell
+        lpCell.innerHTML = lp + '.';
+        service.innerHTML = '<div class="form-group"><input class="form-control" data-val="true" data-val-required="Nie podano nazwy usługi !" id="Services_' + arrayLp + '__Name" name="Services[' + arrayLp + '].Name" value="Wymiana kół" type="text"></div>'
+    }
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
