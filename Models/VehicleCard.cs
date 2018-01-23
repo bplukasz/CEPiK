@@ -27,7 +27,7 @@ namespace CEPiK.Models
         [Remote("ValidateVIN", "VehicleCards", ErrorMessage = "Brak samochodu o takim numerze VIN")]
         public String VIN { get; set; }
 
-        public int VehicleID { get; set; }
+        //public int VehicleID { get; set; }
 
         [ForeignKey("VehicleID")]
         public Vehicle Vehicles { get; set; }
